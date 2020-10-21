@@ -8,7 +8,7 @@ services:
         ports:
          - "80:80"
         networks:
-          - net
+          - app
     server:
         container_name: server
         image: registry:5000/app_server
@@ -17,12 +17,15 @@ services:
         ports:
          - "80:80"
         networks:
-          - net
+          - app
     registry:
         container_name: registry
         image: registry
         ports:
          - "5000:5000"
         networks:
-         - net
-        
+         - app
+networks:
+    app:
+          
+          
