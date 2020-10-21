@@ -1,10 +1,13 @@
-FROM node AS node
-WORKDIR /tmp/
-COPY client/ .
-RUN npm i -g @angular/cli && \
+#
+FROM node:latest AS build
+COPY . /tmp/client/
+WORKDIR /tmp/client
+RUN ls && pwd
+RUN echo N | npm i -g @angular/cli && \
+npm install && \
+ls -l && \
 ng build
 
-
+#
 FROM nginx:alpine
-COPY --from=node /tmp/client/dist/ /usr/share/nginx/html/
-EXPOSE 80
+COPY --from=build /tmp/client/dist /usr/share/nginx/html

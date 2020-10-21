@@ -2,7 +2,7 @@ version: '3'
 services:
     web:
         container_name: web
-        image: registry:5000/app_web
+        image: app_web
         build:
           context: client
         ports:
@@ -11,7 +11,7 @@ services:
           - app
     server:
         container_name: server
-        image: registry:5000/app_server
+        image: app_server
         build:
             context: server
         ports:
