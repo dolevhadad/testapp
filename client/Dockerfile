@@ -1,6 +1,8 @@
 FROM node AS node
 WORKDIR /tmp/
 COPY client/ .
+RUN npm i -g @angular/cli && \
+ng build
 
 
 FROM nginx:alpine
