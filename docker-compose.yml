@@ -13,7 +13,7 @@ services:
         container_name: server
         image: registry:5000/app_server
         build:
-            context: jenkins-ansible/web
+            context: server
         ports:
          - "80:80"
         networks:
