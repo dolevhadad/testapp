@@ -3,6 +3,7 @@
 #commands to compile client
 
 npm i -g @angular/cli
+npm install 
 ng build
 
 #RUN and open brouser
