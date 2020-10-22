@@ -26,5 +26,5 @@ RUN unzip /tmp/play-java-hello-world-web-1.0-SNAPSHOT.zip -d /root/ && mv /root/
 WORKDIR /root/playserver
 
 
-ENTRYPOINT ["java" ,"-Dplay.http.secret.key=ABC","-DCONF_PATH=conf","-Dplay.server.http.port=4200","-cp","lib/*:conf","play.core.server.ProdServerStart"]]
+ENTRYPOINT ["java","-Dplay.http.secret.key=QCY?tAnfk?aZ?iwrNwnxIlR6CTf:G3gf:90Latabg@5241AB`R5W:1uDFN];Ik@n" ,"-DCONF_PATH=conf","-Dplay.server.http.port=4200","-cp","lib/*:conf","play.core.server.ProdServerStart"]
 
