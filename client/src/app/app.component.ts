@@ -18,6 +18,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    this.http.get("http://localhost:9000/hello",{ headers, responseType: 'text'}).subscribe((data: string) => {this.mytext = data});
+    this.http.get("http://server:9000/hello",{ headers, responseType: 'text'}).subscribe((data: string) => {this.mytext = data});
   }
 }
