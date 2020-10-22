@@ -17,7 +17,7 @@ services:
         ports:
          - "4200:4200"
         networks:
-          - app
+         - app
     registry:
         container_name: registry
         image: registry
@@ -27,5 +27,4 @@ services:
          - app
 networks:
     app:
-          
           

@@ -21,11 +21,10 @@ RUN sbt dist
 FROM sbt AS sbt-runner
 
 COPY --from=sbt-builder /root/server/target/universal/play-java-hello-world-web-1.0-SNAPSHOT.zip /tmp
-
 RUN unzip /tmp/play-java-hello-world-web-1.0-SNAPSHOT.zip -d /root/ && mv /root/play-java-hello-world-web-1.0-SNAPSHOT /root/playserver
 
 WORKDIR /root/playserver
 
-ENTRYPOINT ["java" , "-DCONF_PATH=conf","-Dhttp.port=9443","-cp","lib/*:conf","play.core.server.ProdServerStart"]]
 
+ENTRYPOINT ["java" ,"-Dplay.http.secret.key=QCY?tAnfk?aZ?iwrNwnxIlR6CTf:G3gf:90Latabg@5241AB`R5W:1uDFN];Ik@n","-DCONF_PATH=conf","-Dhttp.port=4200","-cp","lib/*:conf","play.core.server.ProdServerStart"]]
 
